@@ -13,48 +13,68 @@ function getHasilUser(kom, user) {
   return "HARUS ULANG COEG , Pilih SESUAI PILIHAN ASU";
 }
 
-const uGajah = document.querySelector(".gajah");
-uGajah.addEventListener("click", function () {
-  //   alert("oke");
-  const pilihanKomputer = getPilihanKomputer();
-  const pilihanUser = uGajah.className;
-  const hasil = getHasilUser(pilihanKomputer, pilihanUser);
-  console.log(`pilihan Komputer : ${pilihanKomputer}`);
-  console.log(`pilihan User : ${pilihanUser}`);
-  console.log(`Hasilnya adalah Kamu : ${hasil}`);
+const pilihan = document.querySelectorAll("li img");
+pilihan.forEach(function (pil) {
+  pil.addEventListener("click", function () {
+    console.log(pil);
+    const pilihanKomputer = getPilihanKomputer();
+    const pilihanUser = pil.className;
+    const hasil = getHasilUser(pilihanKomputer, pilihanUser);
+    console.log(`pilihan Komputer : ${pilihanKomputer}`);
+    console.log(`pilihan User : ${pilihanUser}`);
+    console.log(`Hasilnya adalah Kamu : ${hasil}`);
 
-  const imgKomputer = document.querySelector(`.img-komputer`);
-  imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
-  const info = document.querySelector(`.info`);
-  info.innerHTML = hasil;
+    const imgKomputer = document.querySelector(`.img-komputer`);
+    imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
+    const info = document.querySelector(`.info`);
+    info.innerHTML = hasil;
+  });
 });
-const uOrang = document.querySelector(".orang");
-uOrang.addEventListener("click", function () {
-  //   alert("oke");
-  const pilihanKomputer = getPilihanKomputer();
-  const pilihanUser = uOrang.className;
-  const hasil = getHasilUser(pilihanKomputer, pilihanUser);
-  console.log(`pilihan Komputer : ${pilihanKomputer}`);
-  console.log(`pilihan User : ${pilihanUser}`);
-  console.log(`Hasilnya adalah Kamu : ${hasil}`);
 
-  const imgKomputer = document.querySelector(`.img-komputer`);
-  imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
-  const info = document.querySelector(`.info`);
-  info.innerHTML = hasil;
-});
-const uSemut = document.querySelector(".semut");
-uSemut.addEventListener("click", function () {
-  //   alert("oke");
-  const pilihanKomputer = getPilihanKomputer();
-  const pilihanUser = uSemut.className;
-  const hasil = getHasilUser(pilihanKomputer, pilihanUser);
-  console.log(`pilihan Komputer : ${pilihanKomputer}`);
-  console.log(`pilihan User : ${pilihanUser}`);
-  console.log(`Hasilnya adalah Kamu : ${hasil}`);
+// console.log(pilihan);
 
-  const imgKomputer = document.querySelector(`.img-komputer`);
-  imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
-  const info = document.querySelector(`.info`);
-  info.innerHTML = hasil;
-});
+// const uGajah = document.querySelector(".gajah");
+// uGajah.addEventListener("click", function () {
+//   //   alert("oke");
+//   const pilihanKomputer = getPilihanKomputer();
+//   const pilihanUser = uGajah.className;
+//   const hasil = getHasilUser(pilihanKomputer, pilihanUser);
+//   console.log(`pilihan Komputer : ${pilihanKomputer}`);
+//   console.log(`pilihan User : ${pilihanUser}`);
+//   console.log(`Hasilnya adalah Kamu : ${hasil}`);
+
+//   const imgKomputer = document.querySelector(`.img-komputer`);
+//   imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
+//   const info = document.querySelector(`.info`);
+//   info.innerHTML = hasil;
+// });
+// const uOrang = document.querySelector(".orang");
+// uOrang.addEventListener("click", function () {
+//   //   alert("oke");
+//   const pilihanKomputer = getPilihanKomputer();
+//   const pilihanUser = uOrang.className;
+//   const hasil = getHasilUser(pilihanKomputer, pilihanUser);
+//   console.log(`pilihan Komputer : ${pilihanKomputer}`);
+//   console.log(`pilihan User : ${pilihanUser}`);
+//   console.log(`Hasilnya adalah Kamu : ${hasil}`);
+
+//   const imgKomputer = document.querySelector(`.img-komputer`);
+//   imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
+//   const info = document.querySelector(`.info`);
+//   info.innerHTML = hasil;
+// });
+// const uSemut = document.querySelector(".semut");
+// uSemut.addEventListener("click", function () {
+//   //   alert("oke");
+//   const pilihanKomputer = getPilihanKomputer();
+//   const pilihanUser = uSemut.className;
+//   const hasil = getHasilUser(pilihanKomputer, pilihanUser);
+//   console.log(`pilihan Komputer : ${pilihanKomputer}`);
+//   console.log(`pilihan User : ${pilihanUser}`);
+//   console.log(`Hasilnya adalah Kamu : ${hasil}`);
+
+//   const imgKomputer = document.querySelector(`.img-komputer`);
+//   imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
+//   const info = document.querySelector(`.info`);
+//   info.innerHTML = hasil;
+// });
