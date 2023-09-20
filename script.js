@@ -13,6 +13,23 @@ function getHasilUser(kom, user) {
   return "HARUS ULANG COEG , Pilih SESUAI PILIHAN ASU";
 }
 
+function putar() {
+  const imgKomputer = document.querySelector(".img-komputer");
+  const gambar = ["gajah", "semut", "orang"];
+  let i = 0;
+  const waktuMulai = new Date().getTime();
+  setInterval(() => {
+    if (new Date().getTime() - waktuMulai > 1000) {
+      clearInterval;
+      return;
+    }
+
+    imgKomputer.setAttribute("src", `img/${gambar[i++]}.png`);
+    if (i == gambar.length) {
+      i = 0;
+    }
+  }, 100);
+}
 const pilihan = document.querySelectorAll("li img");
 pilihan.forEach(function (pil) {
   pil.addEventListener("click", function () {
@@ -23,11 +40,13 @@ pilihan.forEach(function (pil) {
     console.log(`pilihan Komputer : ${pilihanKomputer}`);
     console.log(`pilihan User : ${pilihanUser}`);
     console.log(`Hasilnya adalah Kamu : ${hasil}`);
-
-    const imgKomputer = document.querySelector(`.img-komputer`);
-    imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
-    const info = document.querySelector(`.info`);
-    info.innerHTML = hasil;
+    setTimeout(() => {
+      const imgKomputer = document.querySelector(`.img-komputer`);
+      imgKomputer.setAttribute(`src`, `img/${pilihanKomputer}.png`);
+      const info = document.querySelector(`.info`);
+      info.innerHTML = hasil;
+    }, 1000);
+    putar();
   });
 });
 
